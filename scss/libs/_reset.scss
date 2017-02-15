@@ -1,0 +1,5 @@
+$padding: 10;
+a {
+    padding: #{$padding}px;
+    padding: $padding + px;
+}
