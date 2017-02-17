@@ -51,6 +51,11 @@ var main = function() {
             if (len > 30) {
                 $("body").addClass('scrolled');
             }
+            if (len > 700) {
+                $(".nav").addClass('fixed');
+            } else {
+                $(".nav").removeClass('fixed');
+            }
 
         });
     }, 500);
