@@ -598,7 +598,13 @@ body {
     font-family: "Neoplanta";
     font-size: 1rem;
     color: #1d1e19;
-    background-color: #f7f7f7;
+    /*background-color: #f7f7f7;*/
+    background-color: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 p {
@@ -648,6 +654,7 @@ p {
 
 .slider__item:nth-child(1) {
     position: absolute;
+    left: 0;
     bottom: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -701,8 +708,8 @@ p {
 
 .slider__item:nth-child(1) .slider__content .slider__slide > li {
     position: absolute;
-    transform: translateY(-20%);
-    -webkit-transform: translateY(-20%);
+    transform: translateY(-40%);
+    -webkit-transform: translateY(-40%);
     margin-left: 170px;
     width: calc(100% - 170px);
     visibility: hidden;
@@ -712,8 +719,10 @@ p {
     z-index: 10;
 }
 
-.loaded .slider__item:nth-child(1) .slider__content .slider__slide.slide-loaded > li.active,
-.slider__item:nth-child(1) .slider__content .slider__slide.slide-loaded > li.active {
+
+/*.slider__item:nth-child(1) .slider__content .slider__slide.slide-loaded > li.active,*/
+
+.loaded .slider__item:nth-child(1) .slider__content .slider__slide.slide-loaded > li.active {
     transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
     visibility: visible;
@@ -725,6 +734,146 @@ p {
     font-weight: 300;
     letter-spacing: 2px;
 }
+
+.scroll-down {
+    position: absolute;
+    right: 0;
+}
+
+.scroll-circle {
+    position: absolute;
+    right: 100px;
+    margin-top: 50px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    z-index: 9999;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.scroll-circle span {
+    position: absolute;
+    left: 14px;
+    top: 55%;
+}
+
+.site-content {
+    background-color: #f7f7f7;
+    min-height: 1px;
+    width: 100%;
+    position: relative;
+    margin-top: 180px;
+    padding: 10px;
+}
+
+.nav {
+    position: relative;
+    padding: 20px 50px;
+    /*background-color: #fff;*/
+    font-size: 0;
+    z-index: 0;
+}
+
+.nav:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    background: #fff;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.scrolled .nav:after {
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+.nav .nav__brand,
+.nav .nav__container {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(50%);
+    transition: all 0.5s ease;
+}
+
+.scrolled .nav .nav__brand,
+.scrolled .nav .nav__container {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav > * {
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.nav .nav__brand {
+    display: inline-block;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.nav__container {
+    float: right;
+}
+
+.nav__container ul {
+    list-style: none;
+    display: inline-block;
+}
+
+.nav__list li {
+    display: inline-block;
+    list-style: none;
+    padding: 10px 15px;
+}
+
+.nav__list li a {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    letter-spacing: 1.5px;
+    color: #777;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.search {
+    display: inline-block;
+    position: relative;
+    padding: 0 20px;
+}
+
+.search:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color: #ddd;
+}
+
+.search .icon-search {
+    height: 12px;
+    width: 12px;
+    fill: #777;
+    cursor: pointer;
+}
+
+
+/*
+ *   Slick slider
+ */
 
 .slick-slider {
     position: relative;
@@ -1016,12 +1165,19 @@ slick-theme
 
 .slick-dots {
     position: absolute;
-    bottom: 150px;
+    bottom: 120px;
     left: 0;
     width: 100%;
     padding: 0;
     list-style: none;
     padding-left: 170px;
+    opacity: 1;
+    visibility: visible;
+    /*transition: all 0.75s ease;*/
+}
+
+.loaded .slick-dots.fade {
+    animation: fadeIn 0.5s forwards;
 }
 
 .slick-dots li {
@@ -1083,3 +1239,99 @@ slick-theme
     opacity: .75;
     color: black;
 }
+
+@media screen and (max-width: 496px) {
+    .site-header .brand {
+        display: none;
+    }
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 20px 30px;
+        right: 0;
+    }
+    .burger {
+        display: inline-block;
+        position: absolute;
+        height: 10px;
+        width: 20px;
+        right: 30px;
+        top: 28px;
+    }
+    .burger:after,
+    .burger:before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background: #1d1e19;
+    }
+    .burger:after {
+        margin-top: 6px;
+    }
+    .slider__item:nth-child(1) .slider__content .slider__slide > li {
+        margin-left: 0;
+        width: 100%;
+        padding: 0 35px;
+    }
+    .slick-dots {
+        padding-left: 25px;
+        bottom: 50px;
+    }
+    .nav:after {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+    .nav .nav__brand {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .nav__container {
+        display: none;
+    }
+    .loaded .slider__item:nth-child(1) .slider__content .slider__slide.slide-loaded > li.active {
+        transform: translateY(-40%);
+        -webkit-transform: translateY(-40%);
+    }
+    .slider__content h2 {
+        font-size: 32px;
+    }
+    .slider__content p {
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        color: #777;
+    }
+    .slick-list {
+        height: 300px !important;
+    }
+    .slick-slide img {
+        width: auto;
+        height: 100%;
+    }
+    .slider__hero {
+        height: 300px;
+    }
+    .site-header {
+        margin-top: 54px;
+    }
+    .scroll-circle {
+        margin-top: 80px;
+        right: 30px;
+        height: 80px;
+        width: 80px;
+    }
+    .slick-dots li button:before {
+        top: -6px;
+        left: -6px;
+        width: 16px;
+        height: 16px;
+    }
+    .slick-dots li {
+        margin: 0 10px;
+    }
+}
+
+@media screen and (min-width: 756px) {}
