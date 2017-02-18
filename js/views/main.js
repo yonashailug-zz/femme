@@ -51,7 +51,7 @@ var main = function() {
             if (len > 30) {
                 $("body").addClass('scrolled');
             }
-            if (len > 700) {
+            if (len > 650) {
                 $(".nav").addClass('fixed');
             } else {
                 $(".nav").removeClass('fixed');
