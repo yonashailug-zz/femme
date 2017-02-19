@@ -8,10 +8,10 @@
     <!-- build:css main.css -->
     <link rel="stylesheet" href="css/main.css">
     <!-- endbuild -->
-    <title>Femme</title>
+    <title>Femme | Home</title>
 </head>
 
-<body>
+<body class="main">
     <div id="svg-sprite" style="display:none;">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <defs>
@@ -137,7 +137,7 @@
                             </li>
                             <li>
                                 <div class="slider__hero">
-                                    <img src="/assets/hero.jpg">
+                                    <img src="/assets/hero3.jpg">
                                 </div>
                             </li>
                         </ul>
@@ -145,14 +145,14 @@
                 </div>
             </section>
             <div class="scroll-down">
-                <a href="#" class="scroll-circle">
+                <a href="#scroll-down" class="scroll-circle">
                     <span>scroll</span>
                 </a>
             </div>
         </header>
         <!-- End of header menu -->
-        <main class="main-content">
-            <nav class="nav">
+        <main class="main-content main-home">
+            <nav class="nav" id="scroll-down">
                 <div class="nav__brand">
                     <a class="brand__name" href="#">femme.</a>
                 </div>
@@ -178,9 +178,10 @@
                         </li>
                     </ul>
                     <div class="search">
-                        <svg class="icon-search" viewBox="0 0 19 19" enable-background="new 0 0 19 19" xml:space="preserve">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
-                        </svg>
+<svg class="icon-search" viewBox="0 0 19 19" enable-background="new 0 0 19 19" xml:space="preserve">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
+</svg>
+
                     </div>
                 </div>
                 <div class="burger"></div>
@@ -188,7 +189,7 @@
             <section class="main-content-posts">
                 <div class="posts">
                     <div class="row">
-                        <div class="post post--landscape">
+                        <a href="#" class="post post--landscape" data-scroll>
                             <div class="post__content">
                                 <div class="category">Music</div>
                                 <div class="img-post">
@@ -197,8 +198,8 @@
                                 <h2>Stampd Heads to the Big Apple to Showcase "The News Solider"</h2>
                                 <p>Highlighted by classic military detailing and natural...</p>
                             </div>
-                        </div>
-                        <div class="post post--portrait post--right">
+                        </a>
+                        <a href="#" class="post post--portrait post--right" data-scroll>
                             <div class="post__content">
                                 <div class="category">Music</div>
                                 <div class="img-post">
@@ -207,10 +208,10 @@
                                 <h2>UBIQ Revamps the K-Swiss Gstaad in Tonal Colorways</h2>
                                 <p>In a Dazed original series, photographer Scarlett Carlos...</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="row">
-                        <div class="post post--portrait">
+                        <a href="#" class="post post--portrait">
                             <div class="post__content">
                                 <div class="category">Music</div>
                                 <div class="img-post">
@@ -219,8 +220,8 @@
                                 <h2>Hersehel Supply Honors the NY Yankees &amp; LA Dodges Major</h2>
                                 <p>In a Dazed original series, photographer Scarlett Carlos...</p>
                             </div>
-                        </div>
-                        <div class="post post--landscape post--right">
+                        </a>
+                        <a href="#" class="post post--landscape post--right" data-scroll>
                             <div class="post__content">
                                 <div class="category">Music</div>
                                 <div class="img-post">
@@ -229,10 +230,10 @@
                                 <h2>ASICS Tiger Debuts an Ulra Cozy Apparel Collection for 2016</h2>
                                 <p>Highlighted by classic military detailing and natural...</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="row">
-                        <div class="post post--fullwidth">
+                        <a href="#" class="post post--fullwidth" data-scroll>
                             <div class="post__content">
                                 <div class="category">Music</div>
                                 <div class="img-post">
@@ -241,10 +242,10 @@
                                 <h2>Listen to ASAP Rocky &amp; French Montana's New Track</h2>
                                 <p>A promising cut off French's Mac N Cheese 4...</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="row">
-                        <div class="post post--landscape">
+                        <a href="#" class="post post--landscape" data-scroll>
                             <div class="post__content">
                                 <div class="category">Fashion</div>
                                 <div class="img-post">
@@ -253,8 +254,8 @@
                                 <h2>Stampd Heads to the Big Apple to Showcase "The News Solider"</h2>
                                 <p>Highlighted by classic military detailing and natural...</p>
                             </div>
-                        </div>
-                        <div class="post post--portrait post--right">
+                        </a>
+                        <a href="#" class="post post--portrait post--right" data-scroll>
                             <div class="post__content">
                                 <div class="category">Music</div>
                                 <div class="img-post">
@@ -263,10 +264,10 @@
                                 <h2>UBIQ Revamps the K-Swiss Gstaad in Tonal Colorways</h2>
                                 <p>In a Dazed original series, photographer Scarlett Carlos...</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="row">
-                        <div class="post post--portrait">
+                        <a href="#" class="post post--portrait" data-scroll>
                             <div class="post__content">
                                 <div class="category">Fashion</div>
                                 <div class="img-post">
@@ -275,8 +276,8 @@
                                 <h2>Gigi discusses her Milan attack with Lena Dunham</h2>
                                 <p>In a Dazed original series, photographer Scarlett Carlos...</p>
                             </div>
-                        </div>
-                        <div class="post post--landscape post--right">
+                        </a>
+                        <a href="#" class="post post--landscape post--right" data-scroll>
                             <div class="post__content">
                                 <div class="category">Music</div>
                                 <div class="img-post">
@@ -285,7 +286,7 @@
                                 <h2>GREATS Reveal 2016 Fall/Winter Footwear Collaboration Alongside</h2>
                                 <p>A shirt that detects carbon monoxide, radioactive particles...</p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="scroll-down">

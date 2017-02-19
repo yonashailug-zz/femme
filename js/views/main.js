@@ -37,27 +37,70 @@ var main = function() {
             // $(this);
 
             var img = $(this).find('img').attr("src");
-            console.log(img);
             $(this).css({ 'background-image': 'url(' + img + ')' });
             $(this).find('img').css({
                 'display': 'none'
             });
             // console.log(img);
         });
-        $("body").addClass('loaded');
+        $(".main-post .post__details").each(function() {
+            // $(this);
+
+            var img = $(this).find('img').attr("src");
+            $(this).find('img').css({
+                'display': 'none'
+            });
+            $(this).css({ 'background-image': 'url(' + img + ')' });
+            // console.log(img);
+        });
+        $("body.main").addClass('loaded');
+
+        // var scrll = $("*[data-scroll]").offset().top;
+
+        var $navHeight = $(".main .nav").offset().top;
+
         $(window).on("scroll", function(event) {
 
-            var len = $(window).scrollTop();
-            if (len > 30) {
-                $("body").addClass('scrolled');
-            }
-            if (len > 650) {
-                $(".nav").addClass('fixed');
+            $("[data-scroll]").each(function() {
+
+                if ($(this).offset().top <= $(window).scrollTop() + 500) {
+                    $(this).parent().addClass('scrolled');
+                }
+
+            });
+
+            if ($navHeight <= $(window).scrollTop()) {
+                $(".main .nav").addClass('fixed');
+                $(".main .nav").addClass('scrolled');
             } else {
-                $(".nav").removeClass('fixed');
+                $(".main .nav").removeClass('fixed');
             }
 
+            // if (len > 30) {
+            //     $("body").addClass('scrolled');
+            // }
+            // if (len > 650) {
+            //     $(".nav").addClass('fixed');
+            // } else {
+            //     $(".nav").removeClass('fixed');
+            // }
+
         });
+
+        $(".scroll-down").on('click', function() {
+
+            if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+
+                if (target.length) {
+
+                    $('html,body').animate({ scrollTop: target.offset().top - 50 }, 700);
+                    return false;
+                }
+            }
+        });
+
     }, 500);
 
 
