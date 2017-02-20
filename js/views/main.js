@@ -53,6 +53,16 @@ var main = function() {
             $(this).css({ 'background-image': 'url(' + img + ')' });
             // console.log(img);
         });
+
+        // Close player 
+
+        $(".close").on('click', function(e) {
+
+            console.log("You're trying to clsoe the player");
+            e.preventDefault();
+        });
+
+
         $("body.main").addClass('loaded');
 
         // var scrll = $("*[data-scroll]").offset().top;
