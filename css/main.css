@@ -1633,8 +1633,11 @@ slick-theme
     .site-header .brand {
         display: none;
     }
-    .nav {
+    .nav,
+    .nav.fixed {
         position: fixed;
+    }
+    .nav {
         top: 0;
         left: 0;
         padding: 20px 30px;
