@@ -67,6 +67,7 @@ var main = function() {
 
         // var scrll = $("*[data-scroll]").offset().top;
 
+
         var $navHeight = $(".main .nav").offset().top;
 
         $(window).on("scroll", function(event) {
