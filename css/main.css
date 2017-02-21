@@ -607,6 +607,11 @@ a {
     color: inherit;
 }
 
+h2 {
+    font-weight: 300;
+    font-size: 36px;
+}
+
 p {
     font-family: "Neoplanta", sans-serif;
 }
@@ -763,16 +768,32 @@ p {
     padding: 10px;
 }
 
+.contact__content {
+    padding-top: 60px;
+    text-align: center;
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #777;
+}
+
 .main-content:not(.main-home) {
     margin-top: 0;
 }
 
 .nav {
     position: relative;
+    width: 100%;
     padding: 20px 50px;
     background: #fff;
     font-size: 0;
     z-index: 0;
+}
+
+.full-play-page .nav {
+    width: initial;
 }
 
 .main-post .nav {
@@ -821,6 +842,12 @@ p {
     opacity: 0;
     transform: translateY(50%);
     transition: all 0.5s ease;
+}
+
+.main-contacts .nav .nav__brand,
+.main-contacts .nav .nav__container {
+    visibility: visible;
+    opacity: 1;
 }
 
 
@@ -1291,6 +1318,10 @@ slick-theme
     flex-direction: row;
 }
 
+.contact__content .row {
+    flex-direction: column;
+}
+
 .post {
     position: relative;
     padding: 30px 50px;
@@ -1388,14 +1419,16 @@ slick-theme
     width: 100%;
 }
 
-.post__content h2 {
-    font-weight: 300;
+.post__content h2,
+.intro h2 {
     padding-top: 30px;
 }
 
+
+/*
 .main-post .post__content h2 {
     font-size: 36px;
-}
+}*/
 
 .post__content h2,
 .post__content p {
@@ -1412,7 +1445,8 @@ slick-theme
     line-height: 1.5;
 }
 
-.main-content-posts .scroll-down {
+.main-content-posts .scroll-down,
+.main-contacts .scroll-down {
     position: relative;
     text-align: center;
     width: 100%;
@@ -1420,14 +1454,16 @@ slick-theme
     padding-bottom: 50px;
 }
 
-.main-content-posts .scroll-circle {
+.main-content-posts .scroll-circle,
+.main-contacts .scroll-circle {
     position: initial;
     right: initial;
     display: inline-block;
     margin: 0 auto;
 }
 
-.main-content-posts .scroll-circle span {
+.main-content-posts .scroll-circle span,
+.main-contacts .scroll-circle span {
     position: initial;
     margin-left: -14px;
     margin-top: 55%;
@@ -1629,6 +1665,170 @@ slick-theme
     transform: rotate(-90deg);
 }
 
+
+/*
+ *  Contact page
+ */
+
+.contact__content .weather {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 210px;
+    margin-right: 210px;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.weather .column {
+    /*width: 30%;*/
+    margin: 0 10px;
+    margin-bottom: auto;
+    padding: 30px 50px;
+    flex: 1;
+}
+
+.weather .column:first-child {
+    background: #f9f9f9;
+}
+
+.weather .column:last-child {
+    border: 1px solid #ddd;
+    margin-top: 50px;
+}
+
+.weather .weather__item {
+    padding: 20px 0;
+    position: relative;
+}
+
+.weather .column:first-child .weather__item {
+    padding: 40px 0;
+}
+
+.weather .column:last-child .weather__item:after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 1px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.weather .column:last-child .weather__item:last-child:after {
+    display: none;
+}
+
+.weather__place {
+    padding: 20px 0;
+}
+
+.weather .column:last-child .weather__place {
+    padding: 10px 0;
+}
+
+.medium {
+    font-size: 21px;
+}
+
+.small {
+    font-size: 12px;
+}
+
+
+/*
+ *  Insta feed  
+ */
+
+.insta__items {
+    display: flex;
+    display: -webkit-flex;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 210px;
+    margin-right: 210px;
+}
+
+.insta__item {
+    width: 140px;
+    height: 180px;
+    background: #f7f7f7;
+    flex: 1;
+    margin: 0px 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+.insta__img {
+    height: 100%;
+    width: 100%;
+}
+
+.insta__img img {
+    height: 100%;
+}
+
+.insta__caption {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0.5s ease, opacity 0.5s ease;
+    transition: visibility 0.5s ease, opacity 0.5s ease;
+}
+
+.insta__item:hover .insta__caption {
+    visibility: visible;
+    opacity: 1;
+}
+
+.insta__d {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.insta__caption:before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: -1;
+}
+
+.item__item--down {
+    margin-top: 20px;
+}
+
+.insta__username {
+    padding: 10px 0;
+}
+
+.insta__username,
+.hashtag {
+    font-style: italic;
+}
+
+.hashtag {
+    font-size: 24px;
+    padding: 20px 0;
+}
+
 @media screen and (max-width: 496px) {
     .site-header .brand {
         display: none;
@@ -1642,6 +1842,7 @@ slick-theme
         top: 0;
         left: 0;
         right: 0;
+        z-index: 10;
     }
     .burger {
         display: inline-block;
@@ -1821,6 +2022,33 @@ slick-theme
     }
     .post__details img {
         display: block !important;
+    }
+    .contact__content .weather {
+        flex-direction: column;
+    }
+    .contact__content .weather {
+        margin-left: 20px;
+        margin-right: 20px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contact__content {
+        padding-top: 90px;
+    }
+    .insta__items {
+        margin-bottom: 60px;
+        margin-left: 20px;
+        margin-right: 20px;
+        flex-direction: column;
+    }
+    .insta__item {
+        margin: 0 auto;
+        margin-bottom: 20px;
+        width: 160px;
+    }
+    .insta__img img {
+        height: auto;
+        width: 100%;
     }
 }
 
