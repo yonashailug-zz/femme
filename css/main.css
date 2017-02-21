@@ -1636,11 +1636,11 @@ slick-theme
     .nav,
     .nav.fixed {
         position: fixed;
+        padding: 20px 30px;
     }
     .nav {
         top: 0;
         left: 0;
-        padding: 20px 30px;
         right: 0;
     }
     .burger {
