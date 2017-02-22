@@ -576,8 +576,13 @@ template {
 }
 
 @font-face {
-    font-family: "Neoplanta";
+    font-family: "Neoplanta-Regular";
     src: url('../assets/fonts/NeoplantaBG.otf');
+}
+
+@font-face {
+    font-family: "Lato-Regular";
+    src: url('../assets/fonts/lato/Lato-Regular.ttf');
 }
 
 html {
@@ -595,7 +600,7 @@ body {
 }
 
 body {
-    font-family: "Neoplanta";
+    font-family: "Neoplanta-Regular", Helvetica, Arial, sans-serif;
     font-size: 1rem;
     color: #1d1e19;
     /*background-color: #f7f7f7;*/
@@ -613,7 +618,7 @@ h2 {
 }
 
 p {
-    font-family: "Neoplanta", sans-serif;
+    font-family: "Lato-Regular", Helvetica, Arial, sans-serif;
 }
 
 .site-header {
