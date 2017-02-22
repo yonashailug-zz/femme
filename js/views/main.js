@@ -65,6 +65,11 @@ var main = function() {
 
         $("body.main").addClass('loaded');
 
+        $(".burger").on('click', function(e) {
+            $(".nav").toggleClass('open');
+            e.preventDefault();
+            /* Act on the event */
+        });
         // var scrll = $("*[data-scroll]").offset().top;
 
 

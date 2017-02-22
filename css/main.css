@@ -576,8 +576,13 @@ template {
 }
 
 @font-face {
-    font-family: "Neoplanta";
+    font-family: "Neoplanta-Regular";
     src: url('../assets/fonts/NeoplantaBG.otf');
+}
+
+@font-face {
+    font-family: "Lato-Regular";
+    src: url('../assets/fonts/lato/Lato-Regular.ttf');
 }
 
 html {
@@ -595,7 +600,7 @@ body {
 }
 
 body {
-    font-family: "Neoplanta";
+    font-family: "Neoplanta-Regular", Helvetica, Arial, sans-serif;
     font-size: 1rem;
     color: #1d1e19;
     /*background-color: #f7f7f7;*/
@@ -613,7 +618,7 @@ h2 {
 }
 
 p {
-    font-family: "Neoplanta", sans-serif;
+    font-family: "Lato-Regular", Helvetica, Arial, sans-serif;
 }
 
 .site-header {
@@ -1842,6 +1847,7 @@ slick-theme
         top: 0;
         left: 0;
         right: 0;
+        height: 64px;
         z-index: 10;
     }
     .burger {
@@ -1873,10 +1879,18 @@ slick-theme
         padding-left: 25px;
         bottom: 50px;
     }
-    .nav:after {
-        transform: scaleY(1);
-        transform-origin: top;
+    .nav:after,
+    .nav.fixed:after {
+        transform-origin: initial;
+        position: fixed;
         background: #fff;
+        bottom: 0;
+        transform: matrix(1, 0, 0, 1, 0, -500);
+        -webkit-transition: transform .3s ease-out;
+        transition: transform .3s ease-out;
+    }
+    .nav.open:after {
+        transform: matrix(1, 0, 0, 1, 0, 0);
     }
     .nav .nav__brand {
         visibility: visible;
@@ -1884,7 +1898,57 @@ slick-theme
         transform: translateY(0);
     }
     .nav__container {
+        display: block;
+        height: 0;
+    }
+    .nav.open .nav__container,
+    .scrolled.nav .nav__container {
+        float: initial;
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        font-size: 16px;
+        height: auto;
+    }
+    .nav__container ul {
+        display: block;
+    }
+    .nav.open .nav__list li {
+        display: block;
+    }
+    .nav__list li a {
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: all .5s ease-out;
+        transition: all .5s ease-out;
+    }
+    .nav__list li:first-child a {
+        transition-delay: 0.2s;
+    }
+    .nav__list li:nth-child(2) a {
+        transition-delay: 0.3s;
+    }
+    .nav__list li:nth-child(3) a {
+        transition-delay: 0.4s;
+    }
+    .nav__list li:nth-child(4) a {
+        transition-delay: 0.5s;
+    }
+    .nav__list li:nth-child(5) a {
+        transition-delay: 0.6s;
+    }
+    .nav__list li:nth-child(6) a {
+        transition-delay: 0.7s;
+    }
+    .nav.open .nav__list li a {
+        visibility: visible;
+        opacity: 1;
+    }
+    .nav.open .search:before {
         display: none;
+    }
+    .nav.open .search {
+        display: block;
     }
     .loaded .slider__item:nth-child(1) .slider__content .slider__slide.slide-loaded > li.active {
         transform: translateY(-40%);
@@ -1916,6 +1980,7 @@ slick-theme
         right: 30px;
         height: 80px;
         width: 80px;
+        z-index: 10;
     }
     .slick-dots li button:before {
         top: -6px;
